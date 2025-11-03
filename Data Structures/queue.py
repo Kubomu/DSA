@@ -1,30 +1,77 @@
+from collections import deque
+
 class Queue:
+    """
+    A Queue implementation using collections.deque for optimal O(1) performance.
+
+    Queue follows FIFO (First In First Out) principle where the first element
+    added is the first one to be removed.
+
+    Time Complexity:
+        - enqueue: O(1)
+        - dequeue: O(1)
+        - front: O(1)
+        - is_empty: O(1)
+
+    Space Complexity: O(n) where n is the number of elements in the queue
+    """
+
     def __init__(self):
-        # Initialize an empty list to represent the queue
-        self.queue = []
+        """Initialize an empty queue using deque for O(1) operations."""
+        self.queue = deque()
 
     def enqueue(self, data):
-        # Add an element to the rear (end) of the queue
+        """
+        Add an element to the rear (end) of the queue.
+
+        Args:
+            data: The element to add to the queue
+
+        Time Complexity: O(1)
+        """
         self.queue.append(data)
 
     def dequeue(self):
-        # Remove and return the element from the front of the queue
-        # If the queue is not empty, pop the first element; otherwise, return an error message
-        if not self.is_empty():
-            return self.queue.pop(0)  # pop(0) removes the first element (FIFO behavior)
-        else:
-            return "Queue is empty!"  # Handle empty queue scenario
+        """
+        Remove and return the element from the front of the queue.
+
+        Returns:
+            The front element of the queue
+
+        Raises:
+            IndexError: If the queue is empty
+
+        Time Complexity: O(1)
+        """
+        if self.is_empty():
+            raise IndexError("Cannot dequeue from an empty queue!")
+        return self.queue.popleft()  # O(1) operation with deque
 
     def front(self):
-        # Return the front element of the queue without removing it
-        # If the queue is not empty, return the first element; otherwise, return an error message
-        if not self.is_empty():
-            return self.queue[0]
-        else:
-            return "Queue is empty!"  # Handle empty queue scenario
+        """
+        Return the front element of the queue without removing it.
+
+        Returns:
+            The front element of the queue
+
+        Raises:
+            IndexError: If the queue is empty
+
+        Time Complexity: O(1)
+        """
+        if self.is_empty():
+            raise IndexError("Cannot access front of an empty queue!")
+        return self.queue[0]
 
     def is_empty(self):
-        # Check if the queue is empty by comparing its length to 0
+        """
+        Check if the queue is empty.
+
+        Returns:
+            bool: True if queue is empty, False otherwise
+
+        Time Complexity: O(1)
+        """
         return len(self.queue) == 0
 
 # Test the Queue class
