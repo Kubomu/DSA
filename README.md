@@ -1,308 +1,244 @@
-# Data Structures and Algorithms (DSA) Learning Repository
+# Data Structures and Algorithms (DSA) in Python
 
-Welcome to the **DSA Learning Repository**! This is a comprehensive, beginner-friendly collection of fundamental data structures and algorithms implemented in Python, designed to help you understand and master core computer science concepts.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Kubomu/DSA?quickstart=1)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/downloads/)
 
-## 📚 Table of Contents
+Welcome to the DSA Learning Repository! This is a beginner-friendly collection of fundamental data structures and algorithms implemented in Python, designed to help you understand and master core computer science concepts, and then practise them with exercises that grade themselves as you go.
 
+New to this? You do not need to install anything. Jump to [Try it now](#try-it-now-no-install-needed) and you will be running real code in your browser in under a minute.
+
+## Table of Contents
+
+- [Try it now (no install needed)](#try-it-now-no-install-needed)
 - [Overview](#overview)
 - [Repository Structure](#repository-structure)
 - [Topics Covered](#topics-covered)
 - [Getting Started](#getting-started)
+- [Interactive practice with instant feedback](#interactive-practice-with-instant-feedback)
 - [How to Use](#how-to-use)
 - [Learning Path](#learning-path)
-- [Code Quality](#code-quality)
-- [Contributing](#contributing)
 - [Resources](#resources)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 🎯 Overview
+## Try it now (no install needed)
+
+Click the green button below. GitHub builds a full Python workspace for you in the cloud (this is called a Codespace) with everything already set up. Nothing to download, nothing to configure.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Kubomu/DSA?quickstart=1)
+
+Once it opens:
+
+1. Wait a few seconds for the setup to finish. A small progress scoreboard prints in the terminal.
+2. Run any example, for example: `python "Sorting Algorithms/merge_sort.py"`
+3. Open `exercises/practice.py` and start solving. Check your progress any time with `python check.py`.
+
+Prefer to work on your own machine instead? See [Getting Started](#getting-started) below.
+
+## Overview
 
 This repository contains clean, well-documented Python implementations of essential data structures and algorithms. Each implementation includes:
 
-- **Comprehensive docstrings** explaining purpose, parameters, and complexity
-- **Error handling** for robust, production-quality code
-- **Time and space complexity analysis** for performance understanding
-- **Test cases and examples** demonstrating usage
-- **Detailed inline comments** explaining the logic
+- Comprehensive docstrings explaining purpose, parameters, and complexity
+- Error handling for robust code
+- Time and space complexity analysis
+- Test cases and examples demonstrating usage
+- Detailed inline comments explaining the logic
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 DSA/
 ├── Computational Complexity and Big-O Notation/
-│   ├── Intro.md                          # Introduction to Big-O notation
-│   ├── Notes.md                          # Complexity analysis of algorithms
+│   ├── Intro.md                          Introduction to Big-O notation
+│   ├── Notes.md                          Complexity analysis of algorithms
 │   ├── Time Complexity/
-│   │   ├── constant_time.py              # O(1) examples
-│   │   ├── linear_time.py                # O(n) examples
-│   │   └── quadratic_time.py             # O(n²) examples
+│   │   ├── constant_time.py              O(1) examples
+│   │   ├── linear_time.py                O(n) examples
+│   │   └── quadratic_time.py             O(n^2) examples
 │   └── Space Complexity/
-│       ├── O(1).py                       # Constant space examples
-│       └── O(n).py                       # Linear space examples
+│       ├── O(1).py                       Constant space examples
+│       └── O(n).py                       Linear space examples
 │
 ├── Data Structures/
-│   ├── arrays.py                         # Array operations
-│   ├── linked_lists.py                   # Singly linked list
-│   ├── stacks.py                         # Stack (LIFO)
-│   ├── queue.py                          # Queue (FIFO) with deque
-│   ├── hash.py                           # Hash functions
-│   └── dictionary.py                     # Dictionary/HashMap operations
+│   ├── arrays.py                         Array operations
+│   ├── linked_lists.py                   Singly linked list
+│   ├── stacks.py                         Stack (LIFO)
+│   ├── queue.py                          Queue (FIFO) with deque
+│   ├── hash.py                           Hash functions
+│   └── dictionary.py                     Dictionary/HashMap operations
 │
 ├── Sorting Algorithms/
-│   ├── bubble_sort.py                    # O(n²) sorting
-│   └── merge_sort.py                     # O(n log n) sorting
+│   ├── bubble_sort.py                    O(n^2) sorting
+│   └── merge_sort.py                     O(n log n) sorting
 │
 ├── Searching Algorithms/
-│   └── binary_search.py                  # O(log n) search
+│   └── binary_search.py                  O(log n) search
 │
-└── Recursion/
-    └── factorial.py                      # Recursive and iterative factorial
+├── Recursion/
+│   └── factorial.py                      Recursive and iterative factorial
+│
+├── exercises/
+│   ├── practice.py                       Self-grading exercises (start here after the lessons)
+│   └── test_practice.py                  The autograder that checks your solutions
+│
+└── check.py                              Prints your exercise progress as a scoreboard
 ```
 
-## 🔍 Topics Covered
+## Topics Covered
 
-### Data Structures (6 implementations)
+### Data Structures
 
 | Data Structure | File | Time Complexity | Space |
 |----------------|------|-----------------|-------|
-| **Arrays** | `arrays.py` | Access: O(1), Search: O(n) | O(n) |
-| **Linked Lists** | `linked_lists.py` | Append: O(n), Search: O(n) | O(n) |
-| **Stacks** | `stacks.py` | Push/Pop: O(1) | O(n) |
-| **Queues** | `queue.py` | Enqueue/Dequeue: O(1) | O(n) |
-| **Hash Functions** | `hash.py` | Hash: O(k) where k=key length | O(1) |
-| **Dictionaries** | `dictionary.py` | Insert/Lookup/Delete: O(1) avg | O(n) |
+| Arrays | `arrays.py` | Access: O(1), Search: O(n) | O(n) |
+| Linked Lists | `linked_lists.py` | Append: O(n), Search: O(n) | O(n) |
+| Stacks | `stacks.py` | Push/Pop: O(1) | O(n) |
+| Queues | `queue.py` | Enqueue/Dequeue: O(1) | O(n) |
+| Hash Functions | `hash.py` | Hash: O(k) where k = key length | O(1) |
+| Dictionaries | `dictionary.py` | Insert/Lookup/Delete: O(1) avg | O(n) |
 
-### Algorithms
-
-#### Sorting Algorithms (2 implementations)
+### Sorting Algorithms
 
 | Algorithm | Best Case | Average Case | Worst Case | Space |
 |-----------|-----------|--------------|------------|-------|
-| **Bubble Sort** | O(n) | O(n²) | O(n²) | O(1) |
-| **Merge Sort** | O(n log n) | O(n log n) | O(n log n) | O(n) |
+| Bubble Sort | O(n) | O(n^2) | O(n^2) | O(1) |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
 
-#### Searching Algorithms (1 implementation)
+### Searching Algorithms
 
 | Algorithm | Best Case | Average Case | Worst Case | Space |
 |-----------|-----------|--------------|------------|-------|
-| **Binary Search** | O(1) | O(log n) | O(log n) | O(1) |
+| Binary Search | O(1) | O(log n) | O(log n) | O(1) |
 
 ### Computational Complexity
 
-- **Big-O Notation** - Understanding algorithm efficiency
-- **Time Complexity** - O(1), O(n), O(n²) examples
-- **Space Complexity** - O(1), O(n) examples
+- Big-O Notation for understanding algorithm efficiency
+- Time Complexity: O(1), O(n), O(n^2) examples
+- Space Complexity: O(1), O(n) examples
 
-## 🚀 Getting Started
+## Getting Started
+
+If you use the [Try it now](#try-it-now-no-install-needed) button above, you can skip this section entirely.
 
 ### Prerequisites
 
-- **Python 3.x** (3.7 or higher recommended)
+- Python 3.7 or higher
 - Basic understanding of programming concepts
-- Familiarity with Python syntax (helpful but not required)
 
 ### Installation
 
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Kubomu/DSA.git
    cd DSA
    ```
 
-2. **No external dependencies required!** All implementations use Python's standard library.
+2. Install the one tool used by the exercises (pytest):
+   ```bash
+   pip install -r requirements.txt
+   ```
+   The lesson files use only the Python standard library, so they run without this step. You only need pytest to grade the practice exercises.
 
-### Running the Code
+### Running the code
 
 Each file can be run independently:
 
 ```bash
-# Run a specific implementation
 python "Data Structures/linked_lists.py"
 python "Sorting Algorithms/merge_sort.py"
 python "Searching Algorithms/binary_search.py"
 ```
 
-## 📖 How to Use
+## Interactive practice with instant feedback
 
-### 1. **Study the Theory First**
+Reading an algorithm is one thing. Writing it yourself, and getting told immediately whether you got it right, is how it sticks. That is what the `exercises/` folder is for.
 
-Start with the complexity documentation:
-```bash
-# Read the Big-O introduction
-cat "Computational Complexity and Big-O Notation/Intro.md"
+**How it works:**
 
-# Study complexity analysis
-cat "Computational Complexity and Big-O Notation/Notes.md"
-```
+1. Open `exercises/practice.py`. There is one small exercise for each core topic: factorial, binary search, bubble sort, merge sort, a Stack, and a Queue. Each one has a `# TODO` where your code goes.
+2. Fill in a `# TODO` with your own solution.
+3. Ask for a friendly progress report:
+   ```bash
+   python check.py
+   ```
+   You will see a scoreboard, one line per topic:
+   ```
+     [x] 1. Recursion (factorial)   done
+     [ ] 2. Binary search           todo
+     [ ] 3. Bubble sort             todo
+     ...
+     Solved 1 of 6
+   ```
+4. Want the full detail on a result? Run the grader directly:
+   ```bash
+   pytest
+   ```
+5. Keep going until all six read `done`.
 
-### 2. **Explore Implementations**
+If you get stuck on a topic, open its matching lesson file (named in the exercise) for a worked example, then come back and try again. You cannot break anything, so experiment freely.
 
-Each file contains:
-- **Class/function definitions** with comprehensive docstrings
-- **Implementation details** with inline comments
-- **Test cases** at the bottom (in `if __name__ == "__main__"` blocks)
+**Working in a fork?** When you push your solved `exercises/practice.py` to your own fork, GitHub automatically runs the same grader and shows a green check next to your commit once every exercise passes.
 
-Example:
-```python
-# Read and understand the code
-from "Data Structures.stacks" import Stack
+## How to Use
 
-# Create and use the data structure
-stack = Stack()
-stack.push(10)
-stack.push(20)
-print(stack.pop())  # Output: 20
-```
+### 1. Study the theory first
 
-### 3. **Run Examples**
+Start with the complexity documentation in `Computational Complexity and Big-O Notation/` (`Intro.md` and `Notes.md`).
 
-Execute files to see the output:
+### 2. Explore the implementations
+
+Each file contains class or function definitions with docstrings, inline comments, and test cases at the bottom in an `if __name__ == "__main__"` block.
+
+### 3. Run the examples
+
 ```bash
 python "Data Structures/stacks.py"
 ```
 
-### 4. **Modify and Experiment**
+### 4. Practise and experiment
 
-- Change input values
-- Add your own test cases
-- Implement additional methods
-- Compare performance with different input sizes
+Solve the exercises in `exercises/practice.py`, change input values, add your own test cases, and compare performance with different input sizes.
 
-## 🎓 Learning Path
+## Learning Path
 
-### Beginner Level (Start Here!)
+### Beginner (start here)
 
-1. **Computational Complexity**
-   - Read `Intro.md` and `Notes.md`
-   - Study `constant_time.py`, `linear_time.py`
-   - Understand Big-O notation
+1. Computational Complexity: read `Intro.md` and `Notes.md`, study `constant_time.py` and `linear_time.py`
+2. Basic Data Structures: `arrays.py`, `stacks.py`, `queue.py`
+3. Simple Algorithms: `bubble_sort.py`, `factorial.py`
+4. Practise: solve exercises 1, 3, 5, and 6 in `exercises/practice.py`
 
-2. **Basic Data Structures**
-   - Arrays: `arrays.py`
-   - Stacks: `stacks.py`
-   - Queues: `queue.py`
+### Intermediate
 
-3. **Simple Algorithms**
-   - Bubble Sort: `bubble_sort.py`
-   - Recursion: `factorial.py`
+5. Advanced Data Structures: `linked_lists.py`, `hash.py`, `dictionary.py`
+6. Efficient Algorithms: `merge_sort.py`, `binary_search.py`
+7. Space Complexity: study `O(1).py` and `O(n).py`
+8. Practise: solve exercises 2 and 4 in `exercises/practice.py`
 
-### Intermediate Level
+## Resources
 
-4. **Advanced Data Structures**
-   - Linked Lists: `linked_lists.py`
-   - Hash Functions: `hash.py`
-   - Dictionaries: `dictionary.py`
+- Big-O Cheat Sheet: [bigocheatsheet.com](https://www.bigocheatsheet.com/)
+- Visualizations: [visualgo.net](https://visualgo.net/)
+- Practice Problems: [leetcode.com](https://leetcode.com/), [hackerrank.com](https://www.hackerrank.com/)
+- Books: "Introduction to Algorithms" by CLRS, "Grokking Algorithms" by Aditya Bhargava, "Data Structures and Algorithms in Python" by Goodrich et al.
+- Python docs: [Python Official Docs](https://docs.python.org/3/), [collections module](https://docs.python.org/3/library/collections.html), [time complexity](https://wiki.python.org/moin/TimeComplexity)
 
-5. **Efficient Algorithms**
-   - Merge Sort: `merge_sort.py`
-   - Binary Search: `binary_search.py`
+## Contributing
 
-6. **Space Complexity**
-   - Study `O(1).py` and `O(n).py`
-   - Understand trade-offs between time and space
+Contributions are welcome:
 
-## ✅ Code Quality
+1. Report bugs by opening a GitHub issue
+2. Suggest improvements to implementations
+3. Add new algorithms and data structures
+4. Improve documentation
 
-All code in this repository follows best practices:
+Areas for expansion: Trees, Graphs, Heaps, Tries, Union-Find; Quick Sort, Heap Sort, DFS, BFS, Dijkstra; Dynamic Programming; and more exercises in `exercises/practice.py`.
 
-### Documentation
-- ✅ Comprehensive docstrings for all functions and classes
-- ✅ Type hints in docstrings (Args, Returns, Raises)
-- ✅ Time and space complexity annotations
-- ✅ Usage examples in docstrings
-
-### Error Handling
-- ✅ Input validation (type checking)
-- ✅ Proper exception raising with meaningful messages
-- ✅ Edge case handling (empty arrays, invalid inputs)
-
-### Performance
-- ✅ Optimized implementations (e.g., Queue uses `collections.deque` for O(1) operations)
-- ✅ Early termination optimizations where applicable
-- ✅ Overflow prevention (e.g., binary search uses safe mid calculation)
-
-### Testing
-- ✅ Test cases included in each file
-- ✅ Multiple scenarios covered (normal, edge cases, error cases)
-- ✅ Expected outputs documented
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. **Report bugs** - Found an issue? Open a GitHub issue
-2. **Suggest improvements** - Ideas for better implementations
-3. **Add new algorithms** - Implement additional DSA topics
-4. **Improve documentation** - Clarify explanations or add examples
-
-### Areas for Expansion
-
-We'd love contributions in these areas:
-
-**Data Structures:**
-- Trees (Binary Search Trees, AVL Trees, Red-Black Trees)
-- Graphs (Adjacency List, Adjacency Matrix)
-- Heaps (Min Heap, Max Heap, Priority Queue)
-- Tries
-- Disjoint Set (Union-Find)
-
-**Algorithms:**
-- Quick Sort, Heap Sort, Radix Sort
-- Graph algorithms (DFS, BFS, Dijkstra, Bellman-Ford)
-- Dynamic Programming (Knapsack, LCS, Fibonacci)
-- Greedy algorithms
-- String algorithms (KMP, Rabin-Karp)
-
-**Testing:**
-- Unit tests using pytest
-- Performance benchmarks
-- Comparison scripts
-
-## 📚 Resources
-
-### Learn More About DSA
-
-- **Big-O Cheat Sheet:** [bigocheatsheet.com](https://www.bigocheatsheet.com/)
-- **Visualizations:** [visualgo.net](https://visualgo.net/)
-- **Practice Problems:** [leetcode.com](https://leetcode.com/), [hackerrank.com](https://www.hackerrank.com/)
-- **Books:**
-  - "Introduction to Algorithms" by CLRS
-  - "Grokking Algorithms" by Aditya Bhargava
-  - "Data Structures and Algorithms in Python" by Goodrich et al.
-
-### Python Documentation
-
-- [Python Official Docs](https://docs.python.org/3/)
-- [Python collections module](https://docs.python.org/3/library/collections.html)
-- [Python time complexity](https://wiki.python.org/moin/TimeComplexity)
-
-## 📊 Repository Statistics
-
-| Metric | Value |
-|--------|-------|
-| Total Python Files | 15 |
-| Data Structures | 6 |
-| Algorithms | 3 |
-| Complexity Examples | 5 |
-| Documentation Files | 2 |
-| Total Lines of Code | ~1000+ |
-
-## 📝 License
+## License
 
 This project is open source and available for educational purposes.
 
-## 💬 Feedback
-
-Have questions or suggestions? Feel free to:
-- Open an issue on GitHub
-- Submit a pull request
-- Reach out for discussions
-
 ---
 
-**Happy Learning!** 🎉
-
-Remember: Understanding these fundamentals is key to becoming a better programmer. Take your time, experiment with the code, and most importantly, have fun while learning!
-
----
-
-*This repository is maintained with ❤️ for the programming community. Learn DSA with Kubomu!*
+Happy learning! Understanding these fundamentals is key to becoming a better programmer. Take your time, experiment with the code, and enjoy the process.
